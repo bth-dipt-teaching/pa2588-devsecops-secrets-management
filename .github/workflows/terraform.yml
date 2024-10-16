@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
+      ############## Version 4 ##############
+      ## TODO url should be configurable in this repo
       #- name: Import Secrets
       #  id: import-secrets
       #  uses: hashicorp/vault-action@v2
@@ -23,9 +25,10 @@ jobs:
       #    secrets: |
       #        secret/data/sample-secret accessKey | AWS_ACCESS_KEY_ID ;
       #        secret/data/sample-secret secretKey | AWS_SECRET_ACCESS_KEY ;
+      #######################################
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@v3
         with:
           terraform_wrapper: false
 
@@ -45,5 +48,19 @@ jobs:
         id: plan
         run: cd iac && terraform plan -no-color -input=false -out=execution-plan.binary && terraform show --json execution-plan.binary > execution-plan.json
         env:
-          AWS_ACCESS_KEY_ID: AKIAIOSFODNN7EXAMPLE #AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }} #"${{ steps.import-secrets.outputs.AWS_ACCESS_KEY_ID }}"
-          AWS_SECRET_ACCESS_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY #AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} #"${{ steps.import-secrets.outputs.AWS_SECRET_ACCESS_KEY }}"
+        ############## Version 0 ##############
+          AWS_ACCESS_KEY_ID: AKIA2UC3BSXMEAZIFDJD
+          AWS_SECRET_ACCESS_KEY: ovKR7Y1JRzcqpXhYV2b8kuwVd4TUjnBEtQV7kXX1
+        #######################################
+        
+        ############## Version 3 ##############
+        ## (replaces Version 0)
+        #  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        #  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        #######################################
+
+        ############## Version 4 ##############
+        ## (replaces Version 3)
+        #  AWS_ACCESS_KEY_ID: "${{ steps.import-secrets.outputs.AWS_ACCESS_KEY_ID }}"
+        #  AWS_SECRET_ACCESS_KEY: "${{ steps.import-secrets.outputs.AWS_SECRET_ACCESS_KEY }}"
+        #######################################
