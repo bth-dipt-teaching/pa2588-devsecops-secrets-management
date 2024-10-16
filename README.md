@@ -4,6 +4,10 @@ This is part of the course DevSecOps.
 
 > [!WARNING]
 > This playground is not complete yet. Needs steps on creating AWS tokens and HashiCorp vault.
+> (And possible some additional convincing of GitHub whenever a student pushes the files or edits `terraform.yml` for the first time.)
+
+> [!NOTE]
+> The secrets in `terraform.yml` are [Canary Tokens](https://canarytokens.org).
 
 ## Preparation
 
