@@ -7,12 +7,13 @@ This is part of the course DevSecOps.
 > (And possible some additional convincing of GitHub whenever a student pushes the files or edits `terraform.yml` for the first time.)
 
 > [!NOTE]
-> The secrets in `terraform.yml` are [Canary Tokens](https://canarytokens.org).
+> The secrets in `.github/workflowsterraform.yml` are [Canary Tokens](https://canarytokens.org), meaning they _look_ real
+> and will be detected by Secret Scanners such as TruffleHug -- unlike obvious test strings such as `AKIAIOSFODNN7EXAMPLE`.
 
 ## Preparation
 
-  1. Fork this repository, and make sure to set the visibility to "Public".
-  2. Go to the "Actions" tab, and click "I understand my workflows, go ahead and enable them" (if that button is shown).
+  1. Click the "**Use this template**" button in GitHub web interface (don't _fork_ it), and make sure to set the visibility to "Public".
+  2. In your repository, go to the "Actions" tab, and click "I understand my workflows, go ahead and enable them" (if that button is shown).
 
 
 ## 1. Secrets Leakage Detection (Shallow and Deep)
