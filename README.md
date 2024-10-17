@@ -12,7 +12,8 @@ This is part of the course DevSecOps.
 
 ## Preparation
 
-  1. Click the "**Use this template**" button in GitHub web interface (don't _fork_ it), and make sure to set the visibility to "Public".
+  1. Click on [**Use this template**](https://github.com/new?template_name=pa2588-devsecops-secrets-management&template_owner=bth-dipt-teaching)
+     to create a new repository in your GitHub account (don't _fork_ it), and make sure to set the visibility to "Public".
   2. In your repository, go to the "Actions" tab, and click "I understand my workflows, go ahead and enable them" (if that button is shown).
 
 
