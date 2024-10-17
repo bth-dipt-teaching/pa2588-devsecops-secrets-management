@@ -49,6 +49,7 @@ jobs:
         run: cd iac && terraform plan -no-color -input=false -out=execution-plan.binary && terraform show --json execution-plan.binary > execution-plan.json
         env:
         ############## Version 0 ##############
+        # Note: These are Canary Tokens (https://canarytokens.org/).
           AWS_ACCESS_KEY_ID: AKIA2UC3BSXMEAZIFDJD
           AWS_SECRET_ACCESS_KEY: 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
         #######################################
